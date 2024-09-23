@@ -39,30 +39,30 @@ const App = () => {
   };
 
   const shuffleCards = () => {
-    const shuffled = [...cards].sort(() => Math.random() - 0.5);
-    setCards(shuffled);
+    setCards((prevCards) => [...prevCards].sort(() => Math.random() - 0.5));
   };
 
   const handleCardClick = (id) => {
-    const clickedCard = cards.find((card) => card.id === id);
-    if (clickedCard.clicked) {
-      // Game over
-      setScore(0);
-      setCards(cards.map((card) => ({ ...card, clicked: false })));
-    } else {
-      // Update score
-      const newScore = score + 1;
-      setScore(newScore);
-      if (newScore > bestScore) {
-        setBestScore(newScore);
-      }
-      // Mark card as clicked
-      setCards(
-        cards.map((card) =>
+    setCards((prevCards) => {
+      const clickedCard = prevCards.find((card) => card.id === id);
+
+      if (clickedCard.clicked) {
+        // Card was already clicked, end the game
+        setScore(0);
+        return prevCards.map((card) => ({ ...card, clicked: false }));
+      } else {
+        // Card wasn't clicked before, continue the game
+        setScore((prevScore) => {
+          const newScore = prevScore + 1;
+          setBestScore((prevBestScore) => Math.max(newScore, prevBestScore));
+          return newScore;
+        });
+        return prevCards.map((card) =>
           card.id === id ? { ...card, clicked: true } : card
-        )
-      );
-    }
+        );
+      }
+    });
+
     shuffleCards();
   };
 
