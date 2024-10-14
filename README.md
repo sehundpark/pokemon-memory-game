@@ -4,7 +4,7 @@ This project is a fun and interactive memory game featuring Pokemon characters. 
 
 ## Live Demo
 
-![pokemonmemorycard](https://github.com/user-attachments/assets/9048389e-ca4e-40b6-b560-9f75abcd7548)
+![pokemonmemorycard](https://github.com/user-attachments/assets/09b60eeb-202e-4620-906b-6ebaebb2ba12)
 
 Try out the game here: [Pokemon Memory Card Game](https://pokemon-memory-game-sehundpark.netlify.app/)
 
