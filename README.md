@@ -1,6 +1,6 @@
 # Pokemon Memory Card Game
 
-This project is a fun and interactive memory game featuring Pokemon characters. Players click on Pokemon cards to earn points, but must remember which ones they've clicked to avoid repeating and losing the game.
+Pokemon Memory Game is a React-based web application that challenges players to test their memory with Pokemon characters. The game fetches data from the PokeAPI, displays a grid of Pokemon cards, and tracks the player's score as they click unique cards. It features dynamic UI updates, state management with React hooks, and API integration. This project showcases skills in React development, asynchronous JavaScript, and creating interactive user interfaces.
 
 ## Live Demo
 
